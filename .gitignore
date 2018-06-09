@@ -1,0 +1,8 @@
+node_modules
+bower_components
+dist
+packages
+temp.html
+src/**/*.js
+src/**/*.jsx
+src/**/*.js.map

@@ -1,0 +1,33 @@
+{
+    "compilerOptions": {
+        "module": "commonjs",
+        "esModuleInterop": true,
+        "importHelpers": true,
+        "allowJs": false,
+        "target": "es2015",
+        "lib": [ "es6", "dom", "esnext" ],
+        "noImplicitAny": true,
+        "moduleResolution": "node",
+        "sourceMap": true,
+        "baseUrl": ".",
+        "types": [
+            "reflect-metadata"
+        ],
+        "typeRoots": [
+            "node_modules/@types"
+        ],
+        "jsx": "react",
+        "jsxFactory": "h",
+        "experimentalDecorators": true,
+        "emitDecoratorMetadata": true,
+        "paths": {
+            "*": [
+                "www/*"
+            ]
+        }
+    },
+    "include": [
+        "www/**/*.ts",
+        "www/**/*.tsx"
+    ]
+}

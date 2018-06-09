@@ -1,0 +1,31 @@
+version: '3.6'
+services:
+    tsw:
+        image: "tsw/www:latest"
+        build:
+            context: .   
+            dockerfile: Dockerfile
+            args:
+                - PORT=7000
+        ports: 
+            - target: 7000
+              published: 7000
+              protocol: tcp
+        networks:
+            - tsw
+        deploy:
+            replicas: 3           # run 3 instances of server
+            update_config:
+                parallelism: 1    # update 1 at a time
+                delay: 10s        # wait 10 seconds between each
+            restart_policy:
+                condition: on-failure
+                delay: 10s
+                max_attempts: 3
+                window: 60s       # wait 60 seconds to determine if a restart succeeded
+networks:
+    tsw:
+        driver: overlay
+        attachable: true
+
+              
