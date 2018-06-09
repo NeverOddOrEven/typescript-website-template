@@ -10,9 +10,9 @@ build: fetch-deps
 test: build
 	@npm run test
 
-prod: 
-	@npm run production
+prod: build
+	@npm run prod
 
-dev:
-	@npm run development
+dev: build
+	@npm run dev
 

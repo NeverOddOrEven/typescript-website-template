@@ -6,6 +6,9 @@ packagename := $(today)-$(sha1)
 
 tmp := $(shell mktemp -d)
 
+run:
+	@cd ./src && make dev
+
 clean-1:
 	@git diff-index --quiet HEAD
 	@git clean -xdf
